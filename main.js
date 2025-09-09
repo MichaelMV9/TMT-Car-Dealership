@@ -8,7 +8,6 @@ function scrollToSection(sectionId) {
     });
   }
 }
-
 // Mobile navigation toggle
 document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.querySelector('.hamburger');
@@ -236,27 +235,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Performance optimization: Debounce scroll events
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
-    const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
-}
 
-// Apply debounce to scroll events
-const debouncedScrollHandler = debounce(function() {
-  // Scroll-based animations and effects
-  const scrolled = window.pageYOffset;
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-  }
-}, 10);
 
 window.addEventListener('scroll', debouncedScrollHandler);
