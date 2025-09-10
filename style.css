@@ -404,6 +404,38 @@ h1, h2, h3, h4 {
   font-size: 1.1rem;
 }
 
+#cars-button{
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, var(--royal-gold), #FFD700);
+  color: var(--dark-navy);
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+#cars-button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgb(255, 196, 3);
+  background: linear-gradient(45deg, #ffd503, var(--royal-gold));
+}
+#gallery-button{
+  position: fixed;
+  top: 40px;
+  left: 20px;
+  z-index: 1001;
+}
+
 /* Car Parts Section */
 .car-parts {
   padding: 100px 0;
@@ -537,9 +569,10 @@ h1, h2, h3, h4 {
 }
 
 .logo-footer {
-  height: 80px;
+  height: 250px;
   width: auto;
   margin-bottom: 1rem;
+  border-radius: 20px;
   filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
 }
 
