@@ -219,6 +219,8 @@ h1, h2, h3, h4 {
   height: 60px;
   position: relative;
   animation: fadeInUp 1s ease-out 0.6s both;
+  overflow: hidden;
+  width: 100%;
 }
 
 .luxury-car {
@@ -227,8 +229,9 @@ h1, h2, h3, h4 {
   background: linear-gradient(45deg, var(--royal-gold), #FFD700);
   border-radius: 20px 20px 5px 5px;
   position: relative;
-  animation: carDrive 3s ease-in-out infinite;
+  animation: carDriveThrough 4s ease-in-out infinite;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform-origin: center;
 }
 
 .luxury-car::before {
@@ -241,6 +244,20 @@ h1, h2, h3, h4 {
   background: var(--dark-navy);
   border-radius: 50%;
   box-shadow: 50px 0 0 var(--dark-navy);
+  animation: wheelSpin 0.5s linear infinite;
+}
+
+.luxury-car::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -20px;
+  width: 30px;
+  height: 8px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  border-radius: 4px;
+  opacity: 0;
+  animation: exhaustSmoke 4s ease-in-out infinite;
 }
 
 .cta-button {
@@ -654,12 +671,49 @@ h1, h2, h3, h4 {
   }
 }
 
-@keyframes carDrive {
-  0%, 100% {
-    transform: translateX(-20px);
+@keyframes carDriveThrough {
+  0% {
+    transform: translateX(-100px) scale(0.8);
+    opacity: 0.7;
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50px) scale(0.9);
   }
   50% {
-    transform: translateX(20px);
+    transform: translateX(0px) scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(50px) scale(0.9);
+  }
+  100% {
+    transform: translateX(100px) scale(0.8);
+    opacity: 0.7;
+  }
+}
+
+@keyframes wheelSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes exhaustSmoke {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(0) scale(1);
+  }
+  20%, 80% {
+    opacity: 0.6;
+    transform: translateX(-10px) scale(1.2);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-15px) scale(1.5);
   }
 }
 
