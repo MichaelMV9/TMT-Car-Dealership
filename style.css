@@ -216,48 +216,50 @@ h1, h2, h3, h4 {
 
 .car-animation {
   margin: 3rem 0;
-  height: 60px;
+  height: 80px;
   position: relative;
   animation: fadeInUp 1s ease-out 0.6s both;
   overflow: hidden;
   width: 100%;
+  perspective: 1000px;
 }
 
 .luxury-car {
-  width: 80px;
-  height: 40px;
+  width: 120px;
+  height: 50px;
   background: linear-gradient(45deg, var(--royal-gold), #FFD700);
-  border-radius: 20px 20px 5px 5px;
+  border-radius: 25px 25px 8px 8px;
   position: relative;
-  animation: carDriveThrough 4s ease-in-out infinite;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: carDriveThrough 12s ease-in-out infinite;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   transform-origin: center;
-}
-
-.luxury-car::before {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 10px;
-  width: 12px;
-  height: 12px;
-  background: var(--dark-navy);
-  border-radius: 50%;
-  box-shadow: 50px 0 0 var(--dark-navy);
-  animation: wheelSpin 0.5s linear infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .luxury-car::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  right: -20px;
-  width: 30px;
-  height: 8px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-  border-radius: 4px;
-  opacity: 0;
-  animation: exhaustSmoke 4s ease-in-out infinite;
+  top: 8px;
+  left: 15px;
+  right: 15px;
+  height: 15px;
+  background: linear-gradient(90deg, transparent 10%, rgba(255, 255, 255, 0.3) 30%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.3) 70%, transparent 90%);
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+.luxury-car::before {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 15px;
+  width: 18px;
+  height: 18px;
+  background: var(--dark-navy);
+  border-radius: 50%;
+  box-shadow: 75px 0 0 var(--dark-navy);
+  animation: wheelSpin 0.3s linear infinite;
+  border: 2px solid #333;
 }
 
 .cta-button {
@@ -673,19 +675,57 @@ h1, h2, h3, h4 {
 
 @keyframes carDriveThrough {
   0% {
-    transform: translateX(-100px) scale(0.8);
-    opacity: 0.7;
+    transform: translateX(-150px) scale(0.6) rotateY(-5deg);
+    opacity: 0;
+    filter: blur(1px) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   }
-  15% {
+  5% {
+    opacity: 0.3;
+  }
+  10% {
+    transform: translateX(-120px) scale(0.7) rotateY(-3deg);
+    opacity: 0.6;
+    filter: blur(0.5px) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
+  }
+  20% {
+    transform: translateX(-80px) scale(0.85) rotateY(-1deg);
     opacity: 1;
-    transform: translateX(-50px) scale(0.9);
+    filter: blur(0px) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
+  35% {
+    transform: translateX(-20px) scale(0.95) rotateY(0deg);
+    opacity: 1;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.35));
   }
   50% {
-    transform: translateX(0px) scale(1);
-  }
-  85% {
+    transform: translateX(20px) scale(1) rotateY(0deg);
     opacity: 1;
-    transform: translateX(50px) scale(0.9);
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+  }
+  65% {
+    transform: translateX(60px) scale(0.95) rotateY(1deg);
+    opacity: 1;
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.35));
+  }
+  80% {
+    transform: translateX(100px) scale(0.85) rotateY(3deg);
+    opacity: 1;
+    filter: blur(0px) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  }
+  90% {
+    transform: translateX(140px) scale(0.7) rotateY(5deg);
+    opacity: 0.6;
+    filter: blur(0.5px) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
+  }
+  95% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateX(170px) scale(0.6) rotateY(5deg);
+    opacity: 0;
+    filter: blur(1px) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  }
+}
   }
   100% {
     transform: translateX(100px) scale(0.8);
