@@ -258,8 +258,7 @@ h1, h2, h3, h4 {
   height: 18px;
   background: var(--dark-navy);
   border-radius: 50%;
-  box-shadow: 60px 0 0 var(--dark-navy);
-  animation: wheelSpin 0.3s linear infinite;
+  box-shadow: 80px 0 0 var(--dark-navy);
   border: 2px solid #333;
   z-index: 1;
 }
@@ -677,76 +676,42 @@ h1, h2, h3, h4 {
 
 @keyframes carDriveThrough {
   0% {
-    transform: translateX(-200px) scale(0.7) rotateY(-10deg);
+    transform: translateX(-250px) scale(0.8);
     opacity: 0;
-    filter: blur(1px) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-  }
-  5% {
-    opacity: 0.5;
-    transform: translateX(-160px) scale(0.75) rotateY(-8deg);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   }
   10% {
-    transform: translateX(-120px) scale(0.8) rotateY(-5deg);
-    opacity: 0.8;
-    filter: blur(0.5px) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
-  }
-  20% {
-    transform: translateX(-60px) scale(0.9) rotateY(-2deg);
+    transform: translateX(-150px) scale(0.9);
     opacity: 1;
-    filter: blur(0px) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
   }
   30% {
-    transform: translateX(-10px) scale(0.95) rotateY(-1deg);
-    opacity: 1;
-    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.35));
-  }
-  40% {
-    transform: translateX(30px) scale(1) rotateY(0deg);
+    transform: translateX(-50px) scale(1);
     opacity: 1;
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
   }
   50% {
-    transform: translateX(70px) scale(1) rotateY(0deg);
+    transform: translateX(50px) scale(1);
     opacity: 1;
     filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
   }
-  60% {
-    transform: translateX(110px) scale(0.95) rotateY(2deg);
-    opacity: 1;
-    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.35));
-  }
   70% {
-    transform: translateX(150px) scale(0.9) rotateY(5deg);
+    transform: translateX(150px) scale(0.9);
     opacity: 1;
-    filter: blur(0px) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
-  }
-  80% {
-    transform: translateX(190px) scale(0.8) rotateY(8deg);
-    opacity: 0.8;
-    filter: blur(0.5px) drop-shadow(0 3px 6px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
   }
   90% {
-    transform: translateX(220px) scale(0.75) rotateY(10deg);
-    opacity: 0.5;
-  }
-  95% {
-    opacity: 0.2;
+    transform: translateX(250px) scale(0.8);
+    opacity: 1;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   }
   100% {
-    transform: translateX(250px) scale(0.7) rotateY(12deg);
+    transform: translateX(350px) scale(0.8);
     opacity: 0;
-    filter: blur(1px) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
   }
 }
 
-@keyframes wheelSpin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 
 /* Responsive Design */
